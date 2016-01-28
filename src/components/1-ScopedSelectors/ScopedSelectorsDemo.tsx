@@ -5,7 +5,7 @@ import * as React from 'react';
 import Snippet, {IFile} from '../shared/Snippet/Snippet';
 
 import * as fs from 'fs';
-const tsx = fs.readFileSync(__dirname + '/ScopedSelectors.jsx', 'utf8');
+const tsx = fs.readFileSync(__dirname + '/ScopedSelectors.tsx', 'utf8');
 const css = fs.readFileSync(__dirname + '/ScopedSelectors.css', 'utf8');
 
 export default class ScopedSelectorsDemo extends React.Component<any, any> {

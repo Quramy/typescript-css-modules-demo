@@ -4,7 +4,12 @@
   "description": "demonstration for CSS Modules and TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "node cleaner.js",
+    "dts": "tcm src",
+    "copy": "mkdir -p dist && cp src/index.html dist && cp src/components/0-Logo/logo.svg dist",
+    "transpile": "tsc",
+    "bundle": "browserify -p [css-modulesify -o dist/bundle.css src/components/App.css] -o dist/bundle.js src/index.js",
+    "build": "npm run clean && npm run dts && npm run copy && npm run transpile && npm run bundle"
   },
   "repository": {
     "type": "git",
@@ -27,11 +32,17 @@
   "devDependencies": {
     "brfs": "git://github.com/joshwnj/brfs.git#ignore-option",
     "browserify": "^13.0.0",
-    "css-modulesify": "^0.16.1"
+    "css-modulesify": "^0.16.1",
+    "del": "^2.2.0"
   },
   "browserify": {
     "transform": [
-      ["brfs", { "ignore": "\\.(json|css)$" } ]
+      [
+        "brfs",
+        {
+          "ignore": "\\.(json|css)$"
+        }
+      ]
     ]
   }
 }
