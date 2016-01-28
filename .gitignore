@@ -1,0 +1,7 @@
+node_modules/
+typings/
+*.swp
+*.swo
+src/**/*.js
+src/**/*.css.d.ts
+bundle.*

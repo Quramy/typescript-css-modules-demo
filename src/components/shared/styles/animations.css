@@ -1,0 +1,11 @@
+@value bounceAmount: -20px;
+@value duration as bounceDuration from "./animation-values.css";
+
+@keyframes bounce {
+  33% { transform: translateY(bounceAmount); }
+  66% { transform: translateY(0px); }
+}
+
+.bounce {
+  animation: bounce bounceDuration infinite ease-in-out;
+}
