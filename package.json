@@ -1,5 +1,5 @@
 {
-  "name": "typed-css-modules-demo",
+  "name": "typescript-css-modules-demo",
   "version": "1.0.0",
   "description": "demonstration for CSS Modules and TypeScript",
   "main": "index.js",
@@ -22,9 +22,9 @@
   "author": "quramy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Quramy/typed-css-modules-demo/issues"
+    "url": "https://github.com/Quramy/typescript-css-modules-demo/issues"
   },
-  "homepage": "https://github.com/Quramy/typed-css-modules-demo#readme",
+  "homepage": "https://github.com/Quramy/typescript-css-modules-demo#readme",
   "dependencies": {
     "react": "^0.14.6",
     "react-dom": "^0.14.6"
