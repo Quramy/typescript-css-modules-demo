@@ -9,11 +9,12 @@
     "copy": "mkdir -p dist && cp src/index.html dist && cp src/components/0-Logo/logo.svg dist",
     "transpile": "tsc",
     "bundle": "browserify -p [css-modulesify -o dist/bundle.css src/components/App.css] -o dist/bundle.js src/index.js",
-    "build": "npm run clean && npm run dts && npm run copy && npm run transpile && npm run bundle"
+    "build": "npm run clean && npm run dts && npm run copy && npm run transpile && npm run bundle",
+    "deploy" "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Quramy/typed-css-modules-demo.git"
+    "url": "git+https://github.com/Quramy/typescript-css-modules-demo.git"
   },
   "keywords": [
     "css-modules",
