@@ -15,7 +15,7 @@ export default class App extends React.Component<any, any> {
     return (
       <div className={styles.app}>
         <Logo />
-        <h1>CSS Modules Browserify Demo</h1>
+        <h1>CSS Modules TypeScript Demo</h1>
 
         <hr className={styles.hr} />
 
