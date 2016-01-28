@@ -10,7 +10,7 @@
     "transpile": "tsc",
     "bundle": "browserify -p [css-modulesify -o dist/bundle.css src/components/App.css] -o dist/bundle.js src/index.js",
     "build": "npm run clean && npm run dts && npm run copy && npm run transpile && npm run bundle",
-    "deploy" "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
