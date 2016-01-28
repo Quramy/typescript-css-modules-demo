@@ -7,6 +7,7 @@ JSX components and .css files are plagiarized from [https://github.com/css-modul
 ## Install and build
 
 ```sh
+npm install -g typescript browserify typed-css-modules
 npm install
 npm run build
 ```
@@ -14,6 +15,10 @@ npm run build
 And open `dist/index.html`.
 
 ## Re-generate .css.d.ts
+
+```sh
+npm run dts
+```
 
 ## License
 MIT
