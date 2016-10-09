@@ -8,8 +8,10 @@
     "dts": "tcm src",
     "copy": "mkdir -p dist && cp src/index.html dist && cp src/components/0-Logo/logo.svg dist",
     "transpile": "tsc",
-    "bundle": "browserify -p [css-modulesify -o dist/bundle.css src/components/App.css] -o dist/bundle.js src/index.js",
+    "posttranspile": "cpx \"src/**/*.css\" built && cpx \"src/**/*.tsx\" built",
+    "bundle": "browserify -p [css-modulesify -o dist/bundle.css src/components/App.css] -o dist/bundle.js built/index.js",
     "build": "npm run clean && npm run dts && npm run copy && npm run transpile && npm run bundle",
+    "start": "npm run build && open dist/index.html",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
@@ -33,10 +35,11 @@
   "devDependencies": {
     "brfs": "git://github.com/joshwnj/brfs.git#ignore-option",
     "browserify": "^13.0.0",
+    "cpx": "^1.5.0",
     "css-modulesify": "^0.16.1",
     "del": "^2.2.0",
     "typed-css-modules": "^0.1.6",
-    "typescript": "^1.7.5"
+    "typescript": "^2.0.3"
   },
   "browserify": {
     "transform": [

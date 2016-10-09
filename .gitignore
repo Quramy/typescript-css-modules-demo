@@ -1,5 +1,6 @@
 node_modules/
 dist/
+built/
 *.swp
 *.swo
 src/**/*.js

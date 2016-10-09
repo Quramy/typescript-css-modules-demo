@@ -3,7 +3,7 @@
         "module": "commonjs",
         "target": "es5",
         "noImplicitAny": true,
-        "outDir": "src",
+        "outDir": "built",
         "rootDir": "src",
         "sourceMap": false,
         "jsx": "react"
