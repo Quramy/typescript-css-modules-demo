@@ -4,15 +4,17 @@
   "description": "demonstration for CSS Modules and TypeScript",
   "main": "index.js",
   "scripts": {
-    "clean": "node cleaner.js",
-    "dts": "tcm src",
-    "copy": "mkdir -p dist && cp src/index.html dist && cp src/components/0-Logo/logo.svg dist",
+    "dts": "tcm src -o src_gen",
+    "postinstall": "npm run dts",
+    "clean": "rimraf dist built src_gen",
+    "copy": "mkdir -p dist && cpx src/index.html dist && cpx src/components/0-Logo/logo.svg dist",
+    "pretranspile": "npm run dts",
     "transpile": "tsc",
-    "posttranspile": "cpx \"src/**/*.css\" built && cpx \"src/**/*.tsx\" built",
+    "prebundle": "cpx \"src/**/*.css\" built && cpx \"src/**/*.tsx\" built",
     "bundle": "browserify -p [css-modulesify -o dist/bundle.css src/components/App.css] -o dist/bundle.js built/index.js",
-    "build": "npm run clean && npm run dts && npm run copy && npm run transpile && npm run bundle",
-    "start": "npm run build && open dist/index.html",
-    "deploy": "npm run build && gh-pages -d dist"
+    "build": "npm run copy && npm run transpile && npm run bundle",
+    "start": "npm run build && opener dist/index.html",
+    "deploy": "npm run clean && npm run build && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -29,17 +31,21 @@
   },
   "homepage": "https://github.com/Quramy/typescript-css-modules-demo#readme",
   "dependencies": {
-    "react": "^0.14.6",
-    "react-dom": "^0.14.6"
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
   "devDependencies": {
+    "@types/node": "^6.0.46",
+    "@types/react": "^0.14.46",
+    "@types/react-dom": "^0.14.18",
     "brfs": "git://github.com/joshwnj/brfs.git#ignore-option",
     "browserify": "^13.0.0",
     "cpx": "^1.5.0",
     "css-modulesify": "^0.16.1",
-    "del": "^2.2.0",
+    "opener": "^1.4.2",
+    "rimraf": "^2.5.4",
     "typed-css-modules": "^0.1.6",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.8"
   },
   "browserify": {
     "transform": [
