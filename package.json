@@ -35,16 +35,16 @@
     "react-dom": "^15.3.2"
   },
   "devDependencies": {
-    "@types/node": "^6.0.46",
-    "@types/react": "^0.14.46",
+    "@types/node": "^7.0.12",
+    "@types/react": "^15.0.20",
     "@types/react-dom": "^0.14.18",
     "brfs": "git://github.com/joshwnj/brfs.git#ignore-option",
-    "browserify": "^13.0.0",
+    "browserify": "^14.1.0",
     "cpx": "^1.5.0",
-    "css-modulesify": "^0.16.1",
+    "css-modulesify": "^0.27.1",
     "opener": "^1.4.2",
     "rimraf": "^2.5.4",
-    "typed-css-modules": "^0.1.6",
+    "typed-css-modules": "^0.2.0",
     "typescript": "^2.0.8"
   },
   "browserify": {
